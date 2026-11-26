@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: lightblue;
+        }
+        form {
+            background: white;
+            width: 350px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background: green;
+            
+            padding: 10px;
+            width: 100%;
+           
+        }
+        .reset {
+            background: red;
+        }
+        #success {
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<form onsubmit="return register(event)">
+    <h2>Event Registration</h2>
+
+    <h3>Basic Details</h3>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="number" placeholder="Age" required>
+
+    <h3>Additional Details</h3>
+    <select required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+
+    <input type="text" placeholder="College Name" required>
+
+    <select required>
+        <option value="">Select Event</option>
+        <option>Technical</option>
+        <option>Cultural</option>
+        <option>Sports</option>
+    </select>
+
+    <textarea placeholder="Address"></textarea>
+    <input type="date" required>
+
+    <button type="submit">Register</button>
+    <button type="reset" class="reset"
+        onclick="document.getElementById('success').innerHTML="">
+        Reset
+    </button>
+
+    <p id="success"></p>
+</form>
+
+<script>
+function register(event) {
+    event.preventDefault();
+    document.getElementById("success").innerHTML =
+        "Registration Submitted Successfully!";
+    return false;
+}
+</script>
+
+</body>
+</html>
